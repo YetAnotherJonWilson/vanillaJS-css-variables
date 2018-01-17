@@ -36,6 +36,7 @@
     .hl {
       color: var(--base);
     }
+
     /*
       misc styles, nothing to do with CSS variables
     */
@@ -63,7 +64,7 @@
 
     function handleUpdate() {
       const suffix = this.dataset.sizing || "";
-      document.documentElement.style.setProperty('--${this.name}', this.value);
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
